@@ -1,0 +1,140 @@
+{
+  "id": {
+    "type": "keyword"
+  },
+  "sku": {
+    "type": "keyword"
+  },
+  "url": {
+    "type": "keyword"
+  },
+  "url_key": {
+    "type": "text_keyword"
+  },
+  "url_path": {
+    "type": "text_keyword"
+  },
+  "sp_*": {
+    "type": "text",
+    "suggestable": true
+  },
+  "unit": {
+    "type": "keyword"
+  },
+  "price": {
+    "type": "float"
+  },
+  "created": {
+    "type": "date"
+  },
+  "title": {
+    "type": "text_keyword",
+    "suggestable": true
+  },
+  "is_new": {
+    "type": "boolean"
+  },
+  "set_id": {
+    "type": "keyword"
+  },
+  "bf_*": {
+    "type": "long"
+  },
+  "sources": {
+    "type": "text_keyword"
+  },
+  "type_id": {
+    "type": "keyword"
+  },
+  "category": {
+    "type": "hierarchy"
+  },
+  "discount": {
+    "type": "float"
+  },
+  "in_stock": {
+    "type": "boolean"
+  },
+  "sold_qty": {
+    "type": "long"
+  },
+  "ep_text_*": {
+    "type": "keyword"
+  },
+  "ep_float_*": {
+    "type": "float"
+  },
+  "ep_boolean_*": {
+    "type": "boolean"
+  },
+  "ep_string_*": {
+    "type": "keyword"
+  },
+  "ep_int_*": {
+    "type": "integer"
+  },
+  "ep_long_*": {
+    "type": "long"
+  },
+  "ep_double_*": {
+    "type": "double"
+  },
+  "ep_date_*": {
+    "type": "date"
+  },
+  "attr_*": {
+    "type": "keyword"
+  },
+  "image_url": {
+    "type": "keyword"
+  },
+  "old_price": {
+    "type": "float"
+  },
+  "pre_order": {
+    "type": "boolean"
+  },
+  "categories": {
+    "type": "text_keyword",
+    "suggestable": true
+  },
+  "has_images": {
+    "type": "boolean"
+  },
+  "category_id": {
+    "type": "keyword"
+  },
+  "description": {
+    "type": "text"
+  },
+  "salable_qty": {
+    "type": "integer"
+  },
+  "category_ids": {
+    "type": "keyword"
+  },
+  "min_sale_qty": {
+    "type": "integer"
+  },
+  "stock_status": {
+    "type": "keyword"
+  },
+  "qty_increments": {
+    "type": "integer"
+  },
+  "discount_percent": {
+    "type": "float"
+  },
+  "stock_sort_value": {
+    "type": "integer"
+  },
+  "short_description": {
+    "type": "text"
+  },
+  "use_qty_increments": {
+    "type": "boolean"
+  },
+  "position": {
+    "type": "flattened"
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="lupasearch_product" view_id="lupasearch_product" class="LupaSearch\LupaSearchPlugin\Model\Indexer\Product">
+        <title translate="true">LupaSearch Products</title>
+        <description translate="true">Index products info to LupaSearch</description>
+        <dependencies>
+            <indexer id="catalog_product_price"/>
+            <indexer id="catalog_product_attribute"/>
+            <indexer id="catalog_product_category"/>
+            <indexer id="cataloginventory_stock"/>
+        </dependencies>
+    </indexer>
+    <indexer id="lupasearch_category" view_id="lupasearch_category" class="LupaSearch\LupaSearchPlugin\Model\Indexer\Category">
+        <title translate="true">LupaSearch Categories</title>
+        <description translate="true">Index categories info to LupaSearch</description>
+    </indexer>
+    <indexer id="lupasearch_price" view_id="lupasearch_price" class="LupaSearch\LupaSearchPlugin\Model\Indexer\Price">
+        <title translate="true">LupaSearch Prices</title>
+        <description translate="true">Index price info to LupaSearch</description>
+        <dependencies>
+            <indexer id="catalog_product_price"/>
+        </dependencies>
+    </indexer>
+</config>

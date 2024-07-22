@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="lupasearch" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>LupaSearch</label>
+            <tab>catalog</tab>
+            <resource>Magento_Catalog::config_catalog</resource>
+            <group id="indices" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Indices</label>
+                <field id="product" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product</label>
+                </field>
+                <field id="product_suggestion" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Suggestion</label>
+                </field>
+                <field id="category" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category</label>
+                </field>
+                <field id="category_suggestion" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Suggestion</label>
+                </field>
+            </group>
+            <group id="index" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Indexing</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="batch_size" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Batch Size</label>
+                    <validate>required-entry validate-digits</validate>
+                    <comment>Max. 10000</comment>
+                </field>
+                <group id="product" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product</label>
+                    <field id="enable_product_content_hash_check" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Check Product Content Hashes</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <comment>Checks if any of exported product fields has changed since last export</comment>
+                    </field>
+                    <field id="attribute_max_product_size" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Attribute Max. Product Size</label>
+                        <validate>required-entry validate-digits</validate>
+                        <comment>Max product size to reindex after attribute save (or mark indexer as invalid).</comment>
+                    </field>
+                    <field id="zero_price" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Include Zero Price Products</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+            </group>
+            <group id="data" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Data modification</label>
+                <field id="sold_qty_multiplier" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Sold Quantity Multiplier</label>
+                    <validate>validate-number</validate>
+                </field>
+            </group>
+            <group id="queries" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>LupaSearch Queries Management</label>
+                <field id="generate_all_queries" translate="button_label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <button_label>Generate All Queries</button_label>
+                    <frontend_model>LupaSearch\LupaSearchPlugin\Block\Adminhtml\System\Config\Ajax</frontend_model>
+                    <button_url>lupasearch/query/generate</button_url>
+                </field>
+                <group id="product" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product</label>
+                    <field id="key" translate="label" type="text" sortOrder="10" showInDefault="0" showInWebsite="0" showInStore="1">
+                        <label>Query Key</label>
+                    </field>
+                    <field id="create_products_query" translate="button_label" sortOrder="15" showInDefault="0" showInWebsite="0" showInStore="1">
+                        <button_label>Recreate Query</button_label>
+                        <frontend_model>LupaSearch\LupaSearchPlugin\Block\Adminhtml\System\Config\Ajax</frontend_model>
+                        <button_url>lupasearch/query/create/type/product</button_url>
+                    </field>
+                    <field id="catalog_key" translate="label" type="text" sortOrder="20" showInDefault="0" showInWebsite="0" showInStore="1">
+                        <label>Catalog Query Key</label>
+                    </field>
+                    <field id="create_products_catalog_query" translate="button_label" sortOrder="25" showInDefault="0" showInWebsite="0" showInStore="1">
+                        <button_label>Recreate Catalog Query</button_label>
+                        <frontend_model>LupaSearch\LupaSearchPlugin\Block\Adminhtml\System\Config\Ajax</frontend_model>
+                        <button_url>lupasearch/query/create/type/product_catalog</button_url>
+                    </field>
+                    <field id="search_box_key" translate="label" type="text" sortOrder="30" showInDefault="0" showInWebsite="0" showInStore="1">
+                        <label>Search Box Query Key</label>
+                    </field>
+                    <field id="create_products_search_box_query" translate="button_label" sortOrder="35" showInDefault="0" showInWebsite="0" showInStore="1">
+                        <button_label>Recreate Search Box Query</button_label>
+                        <frontend_model>LupaSearch\LupaSearchPlugin\Block\Adminhtml\System\Config\Ajax</frontend_model>
+                        <button_url>lupasearch/query/create/type/product_search_box</button_url>
+                    </field>
+                    <field id="suggest_key" translate="label" type="text" sortOrder="40" showInDefault="0" showInWebsite="0" showInStore="1">
+                        <label>Suggestions Query Key</label>
+                    </field>
+                    <field id="create_suggest_query" translate="button_label" sortOrder="45" showInDefault="0" showInWebsite="0" showInStore="1">
+                        <button_label>Recreate Suggestions Query</button_label>
+                        <frontend_model>LupaSearch\LupaSearchPlugin\Block\Adminhtml\System\Config\Ajax</frontend_model>
+                        <button_url>lupasearch/query/create/type/product_suggest</button_url>
+                    </field>
+                    <field id="boost_fields" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Boost Fields</label>
+                        <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                        <frontend_model>LupaSearch\LupaSearchPlugin\Block\Adminhtml\Form\Field\BoostFields</frontend_model>
+                    </field>
+                    <field id="out_of_stock_products_at_the_end" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Display "Out of Stock" Products at the end</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="categories_search_weight" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Categories Search Weight</label>
+                        <source_model>Magento\CatalogSearch\Model\Source\Weight</source_model>
+                    </field>
+                </group>
+                <field id="category" translate="label" type="text" sortOrder="40" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Categories Query Hash</label>
+                </field>
+                <field id="create_categories_query" translate="button_label" sortOrder="41" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <button_label>Recreate Categories Query</button_label>
+                    <frontend_model>LupaSearch\LupaSearchPlugin\Block\Adminhtml\System\Config\Ajax</frontend_model>
+                    <button_url>lupasearch/query/create/type/category</button_url>
+                </field>
+                <field id="boost_function_coefficient" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Boost Function Coefficient</label>
+                    <validate>required-entry validate-number</validate>
+                </field>
+            </group>
+            <group id="cron" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Cron</label>
+                <field id="regenerate_queries" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Regenerate Queries</label>
+                    <comment><![CDATA[
+<pre>
+* * * * *
+| | | | |
+| | | | +---- Day of the Week   (range: 1-7, 1 standing for Monday)
+| | | +------ Month of the Year (range: 1-12)
+| | +-------- Day of the Month  (range: 1-31)
+| +---------- Hour              (range: 0-23)
++------------ Minute            (range: 0-59)
+Example: 0 0 * * * Daily at midnight
+</pre>]]></comment>
+                </field>
+                <field id="regenerate_suggestions" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Regenerate Suggestions</label>
+                    <comment><![CDATA[
+<pre>
+* * * * *
+| | | | |
+| | | | +---- Day of the Week   (range: 1-7, 1 standing for Monday)
+| | | +------ Month of the Year (range: 1-12)
+| | +-------- Day of the Month  (range: 1-31)
+| +---------- Hour              (range: 0-23)
++------------ Minute            (range: 0-59)
+Example: 0 0 * * * Daily at midnight
+</pre>]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

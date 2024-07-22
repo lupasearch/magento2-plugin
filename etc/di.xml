@@ -1,0 +1,856 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="LupaSearch\LupaSearchPlugin\Api\LupaSearchMapInterface" type="LupaSearch\LupaSearchPlugin\Model\LupaSearchMap"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Adapter\Index\IndexProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Adapter\Index\IndexProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Adapter\SearchEngineAdapterInterface" type="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearch"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface" type="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchQueriesManagement"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Adapter\SearchEnginePoolInterface" type="LupaSearch\LupaSearchPlugin\Model\Adapter\SearchEnginePool"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Attribute\Product\AttributeAfterSaveInterface" type="LupaSearch\LupaSearchPlugin\Model\Attribute\Product\AttributeAfterSave"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\BatchInterface" type="LupaSearch\LupaSearchPlugin\Model\Batch"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Config\Index\ProductConfigInterface" type="LupaSearch\LupaSearchPlugin\Model\Config\Index\ProductConfig"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Config\DataConfigInterface" type="LupaSearch\LupaSearchPlugin\Model\Config\DataConfig"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Config\FieldArrayConfigInterface" type="LupaSearch\LupaSearchPlugin\Model\Config\FieldArrayConfig"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Config\IndexConfigInterface" type="LupaSearch\LupaSearchPlugin\Model\Config\IndexConfig"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Config\ProductConfigInterface" type="LupaSearch\LupaSearchPlugin\Model\Config\ProductConfig"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Config\QueriesConfigInterface" type="LupaSearch\LupaSearchPlugin\Model\Config\QueriesConfig"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Config\Queries\ProductConfigInterface" type="LupaSearch\LupaSearchPlugin\Model\Config\Queries\ProductConfig"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Formatter\HashDataFormatterInterface" type="LupaSearch\LupaSearchPlugin\Model\Formatter\ProductHashDataFormatter"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\FullPoolInterface" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\FullPool"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\RowsPollInterface" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\RowsPoll"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\AttributeValueProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\AttributeValueProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionParametersInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionParameters"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Attributes\AttributeMapperInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\AttributeMapper"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Attributes\AttributeTypeProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\AttributeTypeProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Attributes\BoostAttributesProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\BoostAttributesProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Attributes\ContainsProductCodeAttributeMapInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\ContainsProductCodeAttributeMap"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Attributes\FilterableAttributesProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\FilterableAttributesProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Attributes\SearchableAttributesProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\SearchableAttributesProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Attributes\FilterableDecimalAttributesProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\FilterableDecimalAttributesProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Attributes\SearchableDecimalAttributesProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\SearchableDecimalAttributesProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Attributes\SortableDecimalAttributesProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\SortableDecimalAttributesProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Attributes\SystemAttributeMapInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\SystemAttributeMap"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\ProductsProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Provider\ProductsProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Categories\AnchorProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Provider\Categories\AnchorProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Categories\RootIdsProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Provider\Categories\RootIdsProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\Categories\PositionProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Provider\Categories\PositionProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\CategoriesProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Provider\CategoriesProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Provider\ProviderCacheInterface" type="LupaSearch\LupaSearchPlugin\Model\Provider\ProviderCacheComposite"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Aggregation\BuilderInterface" type="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Aggregation\Builder"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQuery\Configuration\FacetsBuilderInterface" type="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQuery\Configuration\FacetsBuilder"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQuery\Configuration\FiltersBuilderInterface" type="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQuery\Configuration\FiltersBuilder"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQuery\Configuration\FilterValueProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQuery\Configuration\FilterValueProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQuery\Configuration\SortBuilderInterface" type="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQuery\Configuration\SortBuilder"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQuery\SearchQueryConfigurationBuilderInterface" type="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQuery\SearchQueryConfigurationBuilder"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SuggestionQueryBuilderInterface" type="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SuggestionQueryBuilder"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\QueriesGeneratorInterface" type="LupaSearch\LupaSearchPlugin\Model\QueriesGenerator"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\QueryManagerInterface" type="LupaSearch\LupaSearchPlugin\Model\QueryManager"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\QueryBuildersPoolInterface" type="LupaSearch\LupaSearchPlugin\Model\QueryBuildersPool"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\QueryBuilder\FacetTypeProviderInterface" type="LupaSearch\LupaSearchPlugin\Model\QueryBuilder\FacetTypeProvider"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Hydrator\ProductHydratorInterface" type="LupaSearch\LupaSearchPlugin\Model\Product\Hydrator"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Hydrator\CategoryHydratorInterface" type="LupaSearch\LupaSearchPlugin\Model\Category\Hydrator"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Normalizer\DateNormalizerInterface" type="LupaSearch\LupaSearchPlugin\Model\Normalizer\DateNormalizer"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Normalizer\HtmlNormalizerInterface" type="LupaSearch\LupaSearchPlugin\Model\Normalizer\HtmlNormalizer"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Normalizer\StringNormalizerInterface" type="LupaSearch\LupaSearchPlugin\Model\Normalizer\StringNormalizer"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Normalizer\UrlNormalizerInterface" type="LupaSearch\LupaSearchPlugin\Model\Normalizer\UrlNormalizer"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Document\BuilderInterface" type="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Document\Builder"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\DocumentQueryBuilderInterface" type="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\DocumentQueryBuilder"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQueryBuilderInterface" type="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQueryBuilder"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\QueriesInterface" type="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries"/>
+    <preference for="LupaSearch\LupaSearchPlugin\Model\SuggestionsGeneratorInterface" type="LupaSearch\LupaSearchPlugin\Model\SuggestionsGenerator"/>
+    <preference for="Magento\Setup\Model\SearchConfigOptionsList" type="LupaSearch\LupaSearchPlugin\Setup\SearchConfigOptionsList"/>
+
+    <type name="Magento\Search\Setup\CompositeInstallConfig">
+        <arguments>
+            <argument name="installConfigList" xsi:type="array">
+                <item name="lupasearch" xsi:type="object">LupaSearch\LupaSearchPlugin\Setup\InstallConfig</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\CatalogSearch\Model\Indexer\Fulltext\Action\Full">
+        <plugin name="LupaSearch_LupaSearchPlugin_Indexer_Fulltext_Action_Full" type="LupaSearch\LupaSearchPlugin\Plugin\Model\Indexer\Fulltext\Action\FullPlugin"/>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Indexer\IndexerHandler">
+        <arguments>
+            <argument name="rows" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Product\Action\Rows</argument>
+            <argument name="full" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Product\Action\Full</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries\SearchQuery\Configuration\FilterValueProvider">
+        <arguments>
+            <argument name="attributeValueProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Attributes\FilterableAttributeValueProvider</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\AdvancedSearch\Model\SuggestedQueries">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="lupasearch" xsi:type="string">LupaSearch\LupaSearchPlugin\Model\DataProvider\Suggestions</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Aggregation\Builder">
+        <arguments>
+            <argument name="valuesBuilders" xsi:type="array">
+                <item name="stats" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Aggregation\Bucket\StatsValuesBuilder</item>
+                <item name="range" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Aggregation\Bucket\RangeValuesBuilder</item>
+                <item name="terms" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Aggregation\Bucket\TermsValuesBuilder</item>
+                <item name="hierarchy" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Aggregation\Bucket\TermsValuesBuilder</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="elasticsearchLayerCategoryItemCollectionProvider">
+        <arguments>
+            <argument name="factories" xsi:type="array">
+                <item name="lupasearch" xsi:type="object">elasticsearchCategoryCollectionFactory</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="elasticsearchLayerSearchItemCollectionProvider">
+        <arguments>
+            <argument name="factories" xsi:type="array">
+                <item name="lupasearch" xsi:type="object">elasticsearchFulltextSearchCollectionFactory</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Queries">
+        <arguments>
+            <argument name="indexProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\Index\ProductIndexProvider</argument>
+        </arguments>
+    </type>
+    <type name="LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Aggregation\Bucket\StatsValuesBuilder">
+        <arguments>
+            <argument name="indexProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\Index\ProductIndexProvider</argument>
+            <argument name="valuesBuilder" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Search\Adapter\LupaSearch\Aggregation\Bucket\RangeValuesBuilder</argument>
+        </arguments>
+    </type>
+    <type name="LupaSearch\LupaSearchPlugin\Model\Client\LupaSearch">
+        <arguments>
+            <argument name="indexProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\Index\ProductIndexProvider</argument>
+        </arguments>
+    </type>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Client\LupaSearchFactory" type="Magento\AdvancedSearch\Model\Client\ClientFactory">
+        <arguments>
+            <argument name="clientClass" xsi:type="string">LupaSearch\LupaSearchPlugin\Model\Client\LupaSearch</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\AdvancedSearch\Model\Client\ClientResolver">
+        <arguments>
+            <argument name="clientFactories" xsi:type="array">
+                <item name="lupasearch" xsi:type="string">LupaSearch\LupaSearchPlugin\Model\Client\LupaSearchFactory</item>
+            </argument>
+            <argument name="clientOptions" xsi:type="array">
+                <item name="lupasearch" xsi:type="string">LupaSearch\LupaSearchPlugin\Model\Client\ClientOptions</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Search\Model\Adminhtml\System\Config\Source\Engine">
+        <arguments>
+            <argument name="engines" xsi:type="array">
+                <item sortOrder="9" name="lupasearch" xsi:type="string">LupaSearch</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Search\Model\SearchEngine\Validator">
+        <arguments>
+            <argument name="engineValidators" xsi:type="array">
+                <item name="lupasearch" xsi:type="object">LupaSearch\LupaSearchPlugin\Setup\Validator</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Search\Model\EngineResolver">
+        <arguments>
+            <argument name="engines" xsi:type="array">
+                <item name="lupasearch" xsi:type="string">lupasearch</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Search\Model\AdapterFactory">
+        <arguments>
+            <argument name="adapters" xsi:type="array">
+                <item name="lupasearch" xsi:type="string">LupaSearch\LupaSearchPlugin\Model\Search\Adapter</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\CatalogSearch\Model\ResourceModel\EngineProvider">
+        <arguments>
+            <argument name="engines" xsi:type="array">
+                <item name="lupasearch" xsi:type="string">LupaSearch\LupaSearchPlugin\Model\ResourceModel\Engine</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\CatalogSearch\Model\Indexer\IndexerHandlerFactory">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="lupasearch" xsi:type="string">LupaSearch\LupaSearchPlugin\Model\Indexer\IndexerHandler</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Search\Dynamic\IntervalFactory">
+        <arguments>
+            <argument name="intervals" xsi:type="array">
+                <item name="lupasearch" xsi:type="string">Magento\Elasticsearch\Elasticsearch5\SearchAdapter\Aggregation\Interval</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Search\Dynamic\DataProviderFactory">
+        <arguments>
+            <argument name="dataProviders" xsi:type="array">
+                <item name="lupasearch" xsi:type="string">Magento\Elasticsearch\SearchAdapter\Dynamic\DataProvider</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\CatalogSearch\Model\Search\ItemCollectionProvider">
+        <arguments>
+            <argument name="factories" xsi:type="array">
+                <item name="lupasearch" xsi:type="object">Magento\CatalogSearch\Model\ResourceModel\Advanced\CollectionFactory</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\CatalogSearch\Model\Advanced\ProductCollectionPrepareStrategyProvider">
+        <arguments>
+            <argument name="strategies" xsi:type="array">
+                <item name="lupasearch" xsi:type="object">Magento\CatalogSearch\Model\Advanced\ProductCollectionPrepareStrategy</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Console\Command\ReindexStore">
+        <arguments>
+            <argument name="fullIndexerPool" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Action\FullPoolInterface\Proxy</argument>
+        </arguments>
+    </type>
+    <type name="LupaSearch\LupaSearchPlugin\Console\Command\ReindexProduct">
+        <arguments>
+            <argument name="rowsPoll" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Action\RowsPoll\Proxy</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\FilterableAttributes">
+        <arguments>
+            <argument name="attributeValidator" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Validator\FilterableAttributeValidator</argument>
+            <argument name="attributeValueProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Attributes\FilterableAttributeValueProvider</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Price\Hydrator\FilterableDecimalAttributes">
+        <arguments>
+            <argument name="attributeValidator" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Validator\FilterableAttributeValidator</argument>
+            <argument name="attributeValueProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Attributes\FilterableAttributeValueProvider</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Price\Hydrator\SearchableDecimalAttributes">
+        <arguments>
+            <argument name="attributeValidator" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Validator\SearchableAttributeValidator</argument>
+            <argument name="attributeValueProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Attributes\FilterableAttributeValueProvider</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Price\Hydrator\SortableDecimalAttributes">
+        <arguments>
+            <argument name="attributeValidator" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Validator\SortableAttributeValidator</argument>
+            <argument name="attributeValueProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Attributes\FilterableAttributeValueProvider</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\FullPool">
+        <arguments>
+            <argument name="pool" xsi:type="array">
+                <item name="product" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Product\Action\Full</item>
+                <item name="category" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Category\Action\Full</item>
+                <item name="price" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Price\Action\Full</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\RowsPoll">
+        <arguments>
+            <argument name="pool" xsi:type="array">
+                <item name="product" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Product\Action\Rows</item>
+                <item name="category" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Category\Action\Rows</item>
+                <item name="price" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Price\Action\Rows</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\SortableAttributes">
+        <arguments>
+            <argument name="attributeValidator" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Validator\SortableAttributeValidator</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\SearchableAttributes">
+        <arguments>
+            <argument name="attributeValidator" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Validator\SearchableAttributeValidator</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\SystemAttributeMap">
+        <arguments>
+            <argument name="keys" xsi:type="array">
+                <item name="title" xsi:type="string">name</item>
+                <item name="sku" xsi:type="string">sku</item>
+                <item name="price" xsi:type="string">price</item>
+                <item name="category_id" xsi:type="string">category_id</item>
+                <item name="category_ids" xsi:type="string">category_ids</item>
+                <item name="description" xsi:type="string">description</item>
+                <item name="short_description" xsi:type="string">short_description</item>
+                <item name="url_key" xsi:type="string">url_key</item>
+                <item name="url_path" xsi:type="string">url_path</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Attributes\ContainsProductCodeAttributeMap">
+        <arguments>
+            <argument name="keys" xsi:type="array">
+                <item name="title" xsi:type="string">name</item>
+                <item name="sku" xsi:type="string">sku</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Validator\SortableAttributeValidator">
+        <arguments>
+            <argument name="skipSortableAttributes" xsi:type="array">
+                <item name="name" xsi:type="string">name</item>
+                <item name="price" xsi:type="string">price</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Provider\ProviderCacheComposite">
+        <arguments>
+            <argument name="instances" xsi:type="array">
+                <item name="categories" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\CategoriesProvider</item>
+                <item name="category_parent_ids" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Provider\CategoryParentIdsCache</item>
+                <item name="category_position" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\Categories\PositionProviderCache</item>
+                <item name="category_anchor" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\Categories\AnchorProviderCache</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Indexer\Product">
+        <arguments>
+            <argument name="full" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Product\Action\Full</argument>
+            <argument name="rows" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Product\Action\Rows</argument>
+        </arguments>
+    </type>
+    <type name="LupaSearch\LupaSearchPlugin\Model\Indexer\Category">
+        <arguments>
+            <argument name="full" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Category\Action\Full</argument>
+            <argument name="rows" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Category\Action\Rows</argument>
+        </arguments>
+    </type>
+    <type name="LupaSearch\LupaSearchPlugin\Model\Indexer\Price">
+        <arguments>
+            <argument name="full" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Price\Action\Full</argument>
+            <argument name="rows" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Price\Action\Rows</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\QueriesGenerator">
+        <arguments>
+            <argument name="logger" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Logger</argument>
+            <argument name="types" xsi:type="array">
+                <item name="product_search_box" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_PRODUCT_SEARCH_BOX</item>
+                <item name="product_catalog" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_PRODUCT_CATALOG</item>
+                <item name="product_suggest" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_PRODUCT_SUGGEST</item>
+                <item name="product" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_PRODUCT</item>
+                <item name="category" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_CATEGORY</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementPool">
+        <arguments>
+            <argument name="pool" xsi:type="array">
+                <item name="product_suggest" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\QueriesManagement</item>
+                <item name="product_search_box" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\QueriesManagement</item>
+                <item name="product_catalog" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\QueriesManagement</item>
+                <item name="product" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\QueriesManagement</item>
+                <item name="category" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Category\QueriesManagement</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\QueryBuildersPool">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="product_suggest" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\SuggestionsQueryBuilderProcessor</item>
+                <item name="product_search_box" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\QueryBuilderProcessor</item>
+                <item name="product_catalog" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\QueryBuilderProcessor</item>
+                <item name="product" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\QueryBuilderProcessor</item>
+                <item name="category" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Category\QueryBuilder</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Category\QueryBuilder">
+        <arguments>
+            <argument name="boostProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Category\BoostProvider</argument>
+            <argument name="attributeToSelect" xsi:type="array">
+                <item name="id" xsi:type="string">id</item>
+                <item name="title" xsi:type="string">title</item>
+                <item name="url" xsi:type="string">url</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\QueryBuilder">
+        <arguments>
+            <argument name="boostProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\BoostProvider</argument>
+            <argument name="attributeToSelect" xsi:type="array">
+                <item name="id" xsi:type="string">id</item>
+                <item name="type_id" xsi:type="string">type_id</item>
+                <item name="set_id" xsi:type="string">set_id</item>
+                <item name="title" xsi:type="string">title</item>
+                <item name="url" xsi:type="string">url</item>
+                <item name="image_url" xsi:type="string">image_url</item>
+                <item name="sku" xsi:type="string">sku</item>
+                <item name="is_new" xsi:type="string">is_new</item>
+                <item name="price" xsi:type="string">price</item>
+                <item name="old_price" xsi:type="string">old_price</item>
+                <item name="discount" xsi:type="string">discount</item>
+                <item name="discount_percent" xsi:type="string">discount_percent</item>
+                <item name="stock_status" xsi:type="string">stock_status</item>
+                <item name="use_qty_increments" xsi:type="string">use_qty_increments</item>
+                <item name="qty_increments" xsi:type="string">qty_increments</item>
+                <item name="description" xsi:type="string">description</item>
+                <item name="short_description" xsi:type="string">short_description</item>
+                <item name="categories" xsi:type="string">categories</item>
+                <item name="category_id" xsi:type="string">category_id</item>
+                <item name="category_ids" xsi:type="string">category_ids</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Configurable">
+        <arguments>
+            <argument name="hydratorPool" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\ChildrenHydratorPool</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Grouped">
+        <arguments>
+            <argument name="hydratorPool" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\ChildrenHydratorPool</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Bundle">
+        <arguments>
+            <argument name="hydratorPool" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\ChildrenHydratorPool</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Hydrator">
+        <arguments>
+            <argument name="productHydratorPool" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\GeneralHydratorPool</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\HydratorPool">
+        <arguments>
+            <argument name="hydrators" xsi:type="array">
+                <item name="id" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Id</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Product\ChildrenHydratorPool" type="LupaSearch\LupaSearchPlugin\Model\Product\HydratorPool">
+        <arguments>
+            <argument name="hydrators" xsi:type="array">
+                <item name="id" xsi:type="null"/>
+                <item name="filterable" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\FilterableAttributes</item>
+                <item name="searchable" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\SearchableAttributes</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Product\GeneralHydratorPool" type="LupaSearch\LupaSearchPlugin\Model\Product\HydratorPool">
+        <arguments>
+            <argument name="hydrators" xsi:type="array">
+                <item name="general" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\General</item>
+                <item name="filterable" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\FilterableAttributes</item>
+                <item name="searchable" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\SearchableAttributes</item>
+                <item name="boost_fields" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\BoostFields</item>
+                <item name="sortable" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\SortableAttributes</item>
+                <item name="best_sellers" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\BestSellers</item>
+                <item name="category" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Category</item>
+                <item name="image" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Image</item>
+                <item name="price" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Price</item>
+                <item name="stock" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Stock</item>
+                <item name="url_rewrite" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\UrlRewrite</item>
+                <item name="configurable" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Configurable</item>
+                <item name="grouped" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Grouped</item>
+                <item name="bundle" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Bundle</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Product\PriceHydratorPool" type="LupaSearch\LupaSearchPlugin\Model\Product\HydratorPool">
+        <arguments>
+            <argument name="hydrators" xsi:type="array">
+                <item name="price" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Price</item>
+                <item name="filterable_decimal" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Price\Hydrator\FilterableDecimalAttributes</item>
+                <item name="searchable_decimal" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Price\Hydrator\SearchableDecimalAttributes</item>
+                <item name="sortable_decimal" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Price\Hydrator\SortableDecimalAttributes</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Price\Hydrator" type="LupaSearch\LupaSearchPlugin\Model\Product\Hydrator">
+        <arguments>
+            <argument name="productHydratorPool" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\PriceHydratorPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Price\DataGenerator" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Product\DataGenerator">
+        <arguments>
+            <argument name="productHydrator" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Price\Hydrator</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Hydrator\Category">
+        <arguments>
+            <argument name="parentIdsProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Provider\CategoryParentIdsCache</argument>
+            <argument name="positionProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\Categories\PositionProviderCache</argument>
+            <argument name="anchorProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\Categories\AnchorProviderCache</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Provider\CategoryParentIdsCache">
+        <arguments>
+            <argument name="parentIdsProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\Categories\ParentIdsProvider</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Provider\ProductsProvider">
+        <arguments>
+            <argument name="dataModifier" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Data\Modifier</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="lupasearch_clear_product_content_hashes" xsi:type="object">LupaSearch\LupaSearchPlugin\Console\Command\ClearProductContentHashes</item>
+                <item name="lupasearch_query_create" xsi:type="object">LupaSearch\LupaSearchPlugin\Console\Command\CreateQuery</item>
+                <item name="lupasearch_reindex_store" xsi:type="object">LupaSearch\LupaSearchPlugin\Console\Command\ReindexStore</item>
+                <item name="lupasearch_reindex_product" xsi:type="object">LupaSearch\LupaSearchPlugin\Console\Command\ReindexProduct</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Indexer\Product\Consumer">
+        <arguments>
+            <argument name="partialIndexer" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Product\PartialIndexer</argument>
+            <argument name="topic" xsi:type="string">lupasearch.product.index</argument>
+        </arguments>
+    </type>
+    <type name="LupaSearch\LupaSearchPlugin\Model\Indexer\Category\Consumer">
+        <arguments>
+            <argument name="partialIndexer" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Category\PartialIndexer</argument>
+            <argument name="topic" xsi:type="string">lupasearch.category.index</argument>
+        </arguments>
+    </type>
+    <type name="LupaSearch\LupaSearchPlugin\Model\Indexer\Price\Consumer">
+        <arguments>
+            <argument name="partialIndexer" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Price\PartialUpdateIndexer</argument>
+            <argument name="topic" xsi:type="string">lupasearch_price</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\CollectionBuilder">
+        <arguments>
+            <argument name="collectionModifier" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\CollectionModifier</argument>
+        </arguments>
+    </type>
+    <type name="LupaSearch\LupaSearchPlugin\Model\Category\CollectionBuilder">
+        <arguments>
+            <argument name="collectionModifier" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Category\CollectionModifier</argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\ValueBuilder">
+        <arguments>
+            <argument name="oppositeCodes" xsi:type="array">
+                <item name="discount" xsi:type="string">discount</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Config\Source\ProductBoostFieldAttributeCodes">
+        <arguments>
+            <argument name="systemAttributes" xsi:type="array">
+                <item name="in_stock" xsi:type="string">In Stock</item>
+                <item name="is_new" xsi:type="string">Is New</item>
+                <item name="has_images" xsi:type="string">Has Image</item>
+                <item name="sold_qty" xsi:type="string">Sold Quantity</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\MergerFactory">
+        <arguments>
+            <argument name="mergers" xsi:type="array">
+                <item name="lupasearchProductIndex" xsi:type="string">LupaSearch\LupaSearchPlugin\Model\Merger</item>
+                <item name="lupasearchCategoryIndex" xsi:type="string">LupaSearch\LupaSearchPlugin\Model\Merger</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Type">
+        <arguments>
+            <argument name="types" xsi:type="array">
+                <item name="simple" xsi:type="const">Magento\Catalog\Model\Product\Type::TYPE_SIMPLE</item>
+                <item name="virtual" xsi:type="const">Magento\Catalog\Model\Product\Type::TYPE_VIRTUAL</item>
+                <item name="bundle" xsi:type="const">Magento\Catalog\Model\Product\Type::TYPE_BUNDLE</item>
+                <item name="downloadable" xsi:type="const">Magento\Downloadable\Model\Product\Type::TYPE_DOWNLOADABLE</item>
+                <item name="configurable" xsi:type="const">Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE</item>
+                <item name="grouped" xsi:type="const">Magento\GroupedProduct\Model\Product\Type\Grouped::TYPE_CODE</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Attribute\Product\AttributeAfterSave">
+        <arguments>
+            <argument name="pool" xsi:type="array">
+                <item name="searchable" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Attribute\Product\AfterSave\SearchableAttribute</item>
+                <item name="filterable" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Attribute\Product\AfterSave\FilterableAttribute</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\TitleBuilder">
+        <arguments>
+            <argument name="useSymbol" xsi:type="boolean">0</argument>
+            <argument name="alphabetSortAttributes" xsi:type="array">
+                <item name="name" xsi:type="string">name</item>
+                <item name="title" xsi:type="string">title</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="LupaSearch\LupaSearchPlugin\Model\Adapter\SearchEnginePool">
+        <arguments>
+            <argument name="searchEngines" xsi:type="array">
+                <item name="product" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductAdapter</item>
+                <item name="category" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchCategoryAdapter</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Product\Data\Modifier" type="LupaSearch\LupaSearchPlugin\Model\Provider\DataModifier">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="bestsellers" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Modifiers\Bestsellers</item>
+                <item name="category_ids" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Modifiers\CategoryIds</item>
+                <item name="url_rewrites" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Modifiers\UrlRewrites</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Product\CollectionModifier" type="Magento\Framework\Data\CollectionModifier">
+        <arguments>
+            <argument name="conditions" xsi:type="array">
+                <item name="productVisibilityCondition" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Remove</item>
+                <item name="stockStatusCondition" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Remove</item>
+                <item name="status" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Status</item>
+                <item name="type" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Type</item>
+                <item name="visible" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Visible</item>
+                <item name="zeroPrice" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\ZeroPrice</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Category\CollectionModifier" type="Magento\Framework\Data\CollectionModifier">
+        <arguments>
+            <argument name="conditions" xsi:type="array">
+                <item name="productVisibilityCondition" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Remove</item>
+                <item name="stockStatusCondition" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Remove</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Price\CollectionModifier" type="Magento\Framework\Data\CollectionModifier">
+        <arguments>
+            <argument name="conditions" xsi:type="array">
+                <item name="productVisibilityCondition" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Remove</item>
+                <item name="status" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Status</item>
+                <item name="visible" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Visible</item>
+                <item name="stockStatusCondition" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Remove</item>
+                <item name="type" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\Type</item>
+                <item name="zeroPrice" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Conditions\ZeroPrice</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Price\CollectionBuilder" type="LupaSearch\LupaSearchPlugin\Model\Product\CollectionBuilder">
+        <arguments>
+            <argument name="collectionModifier" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Price\CollectionModifier</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="LupaSearch\LupaSearchPlugin\Console\Command\ReindexProductPrice">
+        <arguments>
+            <argument name="collectionBuilder" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Price\CollectionBuilder</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Product\PartialIndexer" type="LupaSearch\LupaSearchPlugin\Model\Indexer\PartialIndexer">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductAdapter</argument>
+            <argument name="dataGenerator" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Product\DataGenerator</argument>
+            <argument name="logger" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Logger</argument>
+            <argument name="dataFilter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Filter\NonChangedProductsDataFilter</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Category\PartialIndexer" type="LupaSearch\LupaSearchPlugin\Model\Indexer\PartialIndexer">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchCategoryAdapter</argument>
+            <argument name="dataGenerator" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Category\DataGenerator</argument>
+            <argument name="logger" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Logger</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Price\PartialUpdateIndexer" type="LupaSearch\LupaSearchPlugin\Model\Indexer\PartialUpdateIndexer">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductAdapter</argument>
+            <argument name="dataGenerator" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Price\DataGenerator</argument>
+            <argument name="logger" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Logger</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Product\Action\Full" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\Full">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductAdapter</argument>
+            <argument name="dataProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\ProductsProviderInterface</argument>
+            <argument name="topic" xsi:type="string">lupasearch.product.index</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Category\Action\Full" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\Full">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchCategoryAdapter</argument>
+            <argument name="dataProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\CategoriesProviderInterface</argument>
+            <argument name="topic" xsi:type="string">lupasearch.category.index</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Price\Action\Full" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\Full">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductAdapter</argument>
+            <argument name="dataProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\ProductsProviderInterface</argument>
+            <argument name="topic" xsi:type="string">lupasearch_price</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Product\Action\Rows" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\Rows">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductAdapter</argument>
+            <argument name="dataProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\ProductsProviderInterface</argument>
+            <argument name="topic" xsi:type="string">lupasearch.product.index</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Category\Action\Rows" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\Rows">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchCategoryAdapter</argument>
+            <argument name="dataProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\CategoriesProviderInterface</argument>
+            <argument name="topic" xsi:type="string">lupasearch.category.index</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Price\Action\Rows" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Action\Rows">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductAdapter</argument>
+            <argument name="dataProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\ProductsProviderInterface</argument>
+            <argument name="topic" xsi:type="string">lupasearch_price</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Adapter\Index\ProductIndexProvider" type="LupaSearch\LupaSearchPlugin\Model\Adapter\Index\IndexProvider">
+        <arguments>
+            <argument name="configPath" xsi:type="string">lupasearch/indices/product</argument>
+            <argument name="suggestionConfigPath" xsi:type="string">lupasearch/indices/product_suggestion</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Adapter\Index\CategoryIndexProvider" type="LupaSearch\LupaSearchPlugin\Model\Adapter\Index\IndexProvider">
+        <arguments>
+            <argument name="configPath" xsi:type="string">lupasearch/indices/category</argument>
+            <argument name="suggestionConfigPath" xsi:type="string">lupasearch/indices/category_suggestion</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductAdapter" type="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearch">
+        <arguments>
+            <argument name="indexProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\Index\ProductIndexProvider</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchCategoryAdapter" type="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearch">
+        <arguments>
+            <argument name="indexProvider" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\Index\CategoryIndexProvider</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductCacheAdapter" type="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchCache">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductAdapter</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchCategoryCacheAdapter" type="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearch">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchCategoryAdapter</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Product\QueriesManagement" type="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchQueriesManagement">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductAdapter</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Category\QueriesManagement" type="LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchQueriesManagement">
+        <arguments>
+            <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchCategoryAdapter</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\CategorySortBuilder" type="LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\SearchSortBuilder">
+        <arguments>
+            <argument name="sortBuilders" xsi:type="array">
+                <item name="40" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\SortBuilder\Created</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\SearchSortBuilder" type="LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\SortBuilder\Composite">
+        <arguments>
+            <argument name="sortBuilders" xsi:type="array">
+                <item name="10" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\SortBuilder\OutOfStock</item>
+                <item name="20" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\SortBuilder\BoostAttribute</item>
+                <item name="30" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\SortBuilder\Value</item>
+                <item name="40" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\SortBuilder\Relevance</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Logger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="info" xsi:type="object">LupaSearch\LupaSearchPlugin\Logger\Handler\Info</item>
+                <item name="critical" xsi:type="object">LupaSearch\LupaSearchPlugin\Logger\Handler\Critical</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Product\QueryBuilderProcessor" type="LupaSearch\LupaSearchPlugin\Model\QueryBuilder\QueryBuilderProcessor">
+        <arguments>
+            <argument name="queryBuilder" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\QueryBuilder</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Product\SuggestionsQueryBuilderProcessor" type="LupaSearch\LupaSearchPlugin\Model\QueryBuilder\QueryBuilderProcessor">
+        <arguments>
+            <argument name="queryBuilder" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\SuggestionsQueryBuilder</argument>
+        </arguments>
+    </virtualType>
+</config>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="regenerate_lupasearch_queries" instance="LupaSearch\LupaSearchPlugin\Cron\GenerateQueries" method="execute">
+            <config_path>lupasearch/cron/regenerate_queries</config_path>
+        </job>
+        <job name="regenerate_lupasearch_suggestions" instance="LupaSearch\LupaSearchPlugin\Cron\GenerateSuggestions" method="execute">
+            <config_path>lupasearch/cron/regenerate_suggestions</config_path>
+        </job>
+    </group>
+</config>

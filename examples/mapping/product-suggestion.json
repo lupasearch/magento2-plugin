@@ -1,0 +1,17 @@
+{
+  "fields": [
+    "title",
+    "sku",
+    "sp_*",
+    "categories"
+  ],
+  "minLength": 3,
+  "excludeNumeric": false,
+  "wordSpecialChars": [
+    "-",
+    "."
+  ],
+  "boostAttributeMatch": {
+    "categories": 100
+  }
+}

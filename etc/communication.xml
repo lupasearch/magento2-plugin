@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
+    <topic name="lupasearch.product.index" request="LupaSearch\LupaSearchPlugin\Model\BatchInterface">
+        <handler name="lupasearch.product.index.handler" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Product\Consumer" method="process"/>
+    </topic>
+    <topic name="lupasearch.category.index" request="LupaSearch\LupaSearchPlugin\Model\BatchInterface">
+        <handler name="lupasearch.category.index.handler" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Category\Consumer" method="process"/>
+    </topic>
+    <topic name="lupasearch_price" request="LupaSearch\LupaSearchPlugin\Model\BatchInterface">
+        <handler name="lupasearch_price.handler" type="LupaSearch\LupaSearchPlugin\Model\Indexer\Price\Consumer" method="process"/>
+    </topic>
+</config>
