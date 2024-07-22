@@ -1,0 +1,14 @@
+{
+  "name": "products-lt",
+  "language": "lt",
+  "type": "DOC",
+  "metadata": {
+    "imageKey": "image_url",
+    "titleKey": "title",
+    "baseImageUrl": "https://www.lupasearch.com/",
+    "regularPriceKey": "old_price",
+    "additionalFields": [
+    ],
+    "discountPriceKey": "price"
+  }
+}

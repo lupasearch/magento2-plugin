@@ -1,0 +1,45 @@
+<?php
+
+declare(strict_types=1);
+
+//phpcs:disable SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration.MissingVariable
+/** @var \LupaSearch\LupaSearchPlugin\Block\Adminhtml\System\Config\Ajax $block */
+/** @var \Magento\Framework\Escaper $escaper */ ?>
+<script>
+    require(['prototype'], function () {
+        if (typeof window.AjaxConfig === "undefined") {
+            window.AjaxConfig = {};
+        }
+        window.AjaxConfig.<?= $escaper->escapeJs($block->getFunctionName()) ?> = function () {
+            new Ajax.Request('<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>', {
+                onSuccess: function (response) {
+                    var result = '<?= $escaper->escapeHtml(__('Unknown response.')) ?>';
+                    var resultMessage = $('<?= /* @noEscape */ $block->getId(); ?>');
+
+                    try {
+                        if (response.responseText.isJSON()) {
+                            response = response.responseText.evalJSON();
+                        }
+
+                        if (response.hasOwnProperty('success')) {
+                            result = response.message;
+                        }
+
+                        if (response.hasOwnProperty('success') && response.success == 1) {
+                            resultMessage.removeClassName('hidden').addClassName('success')
+                        } else {
+                            resultMessage.removeClassName('hidden').addClassName('error')
+                        }
+                    } catch (e) {
+                        resultMessage.removeClassName('hidden').addClassName('error')
+                    }
+                    resultMessage.update(result);
+                }
+            });
+        }
+    });
+</script>
+<div class="actions">
+    <div id="<?= $escaper->escapeHtmlAttr($block->getId()); ?>" class="message hidden"></div>
+    <?= $block->getButtonHtml(); ?>
+</div>

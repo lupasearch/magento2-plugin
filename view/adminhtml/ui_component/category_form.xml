@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="search_node" sortOrder="50">
+        <settings>
+            <collapsible>true</collapsible>
+            <label translate="true">LupaSearch</label>
+        </settings>
+        <field name="lupasearch_boost" sortOrder="10" formElement="input">
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Boost</label>
+            </settings>
+        </field>
+    </fieldset>
+</form>

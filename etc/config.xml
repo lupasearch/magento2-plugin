@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <catalog>
+            <search>
+                <engine>lupasearch</engine>
+            </search>
+        </catalog>
+        <lupasearch>
+            <index>
+                <batch_size>100</batch_size>
+                <product>
+                    <enable_product_content_hash_check>1</enable_product_content_hash_check>
+                    <attribute_max_product_size>10000</attribute_max_product_size>
+                </product>
+            </index>
+            <queries>
+                <product>
+                    <boost_fields>
+                        {"_1596545546133_133":{"attribute_code":"lupasearch_boost","coefficient":"1"}}
+                    </boost_fields>
+                    <categories_search_weight>1</categories_search_weight>
+                    <similar_queries>
+                        <start_tag><![CDATA[<del>]]></start_tag>
+                        <max_results>0</max_results>
+                        <limit>8</limit>
+                        <end_tag><![CDATA[</del>]]></end_tag>
+                        <queries_limit>1</queries_limit>
+                    </similar_queries>
+                </product>
+                <boost_function_coefficient>0.1</boost_function_coefficient>
+            </queries>
+            <cron>
+                <regenerate_queries>0 0 * * *</regenerate_queries>
+                <regenerate_suggestions>0 */6 * * *</regenerate_suggestions>
+            </cron>
+        </lupasearch>
+    </default>
+</config>

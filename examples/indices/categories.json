@@ -1,0 +1,16 @@
+{
+  "name": "categories-lt",
+  "language": "lt",
+  "type": "DOC",
+  "metadata": {
+    "imageKey": "",
+    "titleKey": "title",
+    "baseImageUrl": "",
+    "regularPriceKey": "",
+    "additionalFields": [
+      "id",
+      "url"
+    ],
+    "discountPriceKey": ""
+  }
+}
