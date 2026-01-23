@@ -922,7 +922,6 @@
                 <item name="category_parent_ids" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Provider\CategoryParentIdsCache</item>
                 <item name="category_position" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\Categories\PositionProviderCache</item>
                 <item name="category_anchor" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Provider\Categories\AnchorProviderCache</item>
-                <item name="review" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Product\Provider\ReviewProvider</item>
             </argument>
         </arguments>
     </virtualType>

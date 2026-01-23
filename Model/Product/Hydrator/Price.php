@@ -72,17 +72,20 @@ class Price implements ProductHydratorInterface
 
     protected function buildProductData(Product $product): array
     {
+        $finalPrice = (float)$product->getFinalPrice();
+        $price = (float)$product->getPrice();
+
         return [
-            'price' => $this->round((float)$product->getFinalPrice()),
-            'old_price' => $this->round((float)$product->getPrice()),
+            'price' => $this->round($finalPrice),
+            'old_price' => $this->round($price),
             'price_with_tax' => $this->round(
-                (float)$this->catalogHelper->getTaxPrice($product, $product->getFinalPrice(), true)
+                (float)$this->catalogHelper->getTaxPrice($product, $finalPrice, true)
             ),
             'old_price_with_tax' => $this->round(
-                (float)$this->catalogHelper->getTaxPrice($product, $product->getPrice(), true)
+                (float)$this->catalogHelper->getTaxPrice($product, $price, true)
             ),
-            'discount' => $this->getDiscount($product),
-            'discount_percent' => $this->getDiscountPercent($product),
+            'discount' => $this->getDiscount($price, $finalPrice),
+            'discount_percent' => $this->getDiscountPercent($price, $finalPrice),
         ];
     }
 
