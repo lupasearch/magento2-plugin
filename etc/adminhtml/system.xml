@@ -38,17 +38,22 @@
                 </field>
                 <group id="product" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Product</label>
-                    <field id="enable_product_content_hash_check" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <field id="enable_product_content_hash_check" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Check Product Content Hashes</label>
                         <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                         <comment>Checks if any of exported product fields has changed since last export</comment>
                     </field>
-                    <field id="attribute_max_product_size" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <field id="enable_price_update_hash_check" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Check Price Update Hashes</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <comment>Checks if any of exported price fields have changed since last export</comment>
+                    </field>
+                    <field id="attribute_max_product_size" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
                         <label>Attribute Max. Product Size</label>
                         <validate>required-entry validate-digits</validate>
                         <comment>Max product size to reindex after attribute save (or mark indexer as invalid).</comment>
                     </field>
-                    <field id="zero_price" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <field id="zero_price" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
                         <label>Include Zero Price Products</label>
                         <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     </field>

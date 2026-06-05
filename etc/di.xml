@@ -796,11 +796,45 @@
             <argument name="logger" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Logger</argument>
         </arguments>
     </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Config\Index\ProductHashCheckConfig" type="LupaSearch\LupaSearchPlugin\Model\Config\Index\HashCheckConfig">
+        <arguments>
+            <argument name="xmlConfigPath" xsi:type="string">lupasearch/index/product/enable_product_content_hash_check</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Config\Index\PriceUpdateHashCheckConfig" type="LupaSearch\LupaSearchPlugin\Model\Config\Index\HashCheckConfig">
+        <arguments>
+            <argument name="xmlConfigPath" xsi:type="string">lupasearch/index/product/enable_price_update_hash_check</argument>
+        </arguments>
+    </virtualType>
+    <type name="LupaSearch\LupaSearchPlugin\Model\Filter\NonChangedProductsDataFilter">
+        <arguments>
+            <argument name="config" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Config\Index\ProductHashCheckConfig</argument>
+        </arguments>
+    </type>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\ResourceModel\GetPriceUpdateHashesByProductIds" type="LupaSearch\LupaSearchPlugin\Model\ResourceModel\GetProductHashesByProductIds">
+        <arguments>
+            <argument name="tableName" xsi:type="string">lupasearch_price_update_hash</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\ResourceModel\UpdatePriceUpdateHashes" type="LupaSearch\LupaSearchPlugin\Model\ResourceModel\UpdateProductHashes">
+        <arguments>
+            <argument name="tableName" xsi:type="string">lupasearch_price_update_hash</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="LupaSearch\LupaSearchPlugin\Model\Filter\NonChangedPriceUpdateDataFilter" type="LupaSearch\LupaSearchPlugin\Model\Filter\NonChangedProductsDataFilter">
+        <arguments>
+            <argument name="getProductHashesByProductIds" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\ResourceModel\GetPriceUpdateHashesByProductIds</argument>
+            <argument name="updateProductHashes" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\ResourceModel\UpdatePriceUpdateHashes</argument>
+            <argument name="config" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Config\Index\PriceUpdateHashCheckConfig</argument>
+        </arguments>
+    </virtualType>
+
     <virtualType name="LupaSearch\LupaSearchPlugin\Model\Indexer\Price\PartialUpdateIndexer" type="LupaSearch\LupaSearchPlugin\Model\Indexer\PartialUpdateIndexer">
         <arguments>
             <argument name="searchEngineAdapter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Adapter\LupaSearchProductAdapter</argument>
             <argument name="dataGenerator" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Price\DataGenerator</argument>
             <argument name="logger" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Logger</argument>
+            <argument name="dataFilter" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Filter\NonChangedPriceUpdateDataFilter</argument>
         </arguments>
     </virtualType>
 

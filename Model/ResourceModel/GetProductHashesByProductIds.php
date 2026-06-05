@@ -16,9 +16,12 @@ class GetProductHashesByProductIds
 
     private ResourceConnection $resourceConnection;
 
-    public function __construct(ResourceConnection $resourceConnection)
+    private string $tableName;
+
+    public function __construct(ResourceConnection $resourceConnection, string $tableName = self::TABLE_NAME)
     {
         $this->resourceConnection = $resourceConnection;
+        $this->tableName = $tableName;
     }
 
     /**
@@ -35,7 +38,7 @@ class GetProductHashesByProductIds
         $connection = $this->resourceConnection->getConnection();
         $select = $connection->select();
 
-        $select->from($connection->getTableName(self::TABLE_NAME), [self::COLUMN_PRODUCT_ID, self::COLUMN_HASH]);
+        $select->from($connection->getTableName($this->tableName), [self::COLUMN_PRODUCT_ID, self::COLUMN_HASH]);
         $select->where(self::COLUMN_PRODUCT_ID . ' IN (?)', $productIds);
         $select->where(self::COLUMN_STORE_ID . ' = ?', $storeId);
 

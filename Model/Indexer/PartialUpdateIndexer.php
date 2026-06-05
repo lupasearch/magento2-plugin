@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace LupaSearch\LupaSearchPlugin\Model\Indexer;
 
 use LupaSearch\LupaSearchPlugin\Model\Adapter\SearchEngineAdapterInterface;
+use LupaSearch\LupaSearchPlugin\Model\Filter\DataFilterInterface;
 use LupaSearch\Exceptions\ApiException;
 use LupaSearch\Exceptions\BadResponseException;
 use LupaSearch\Handlers\ErrorHandlerInterface;
@@ -24,18 +25,22 @@ class PartialUpdateIndexer implements PartialIndexerInterface
 
     private LoggerInterface $logger;
 
+    private ?DataFilterInterface $dataFilter;
+
     public function __construct(
         SearchEngineAdapterInterface $searchEngineAdapter,
         DataGeneratorInterface $dataGenerator,
         EventManager $eventManager,
         ErrorHandlerInterface $errorHandler,
-        LoggerInterface $logger
+        LoggerInterface $logger,
+        ?DataFilterInterface $dataFilter = null
     ) {
         $this->searchEngineAdapter = $searchEngineAdapter;
         $this->dataGenerator = $dataGenerator;
         $this->eventManager = $eventManager;
         $this->errorHandler = $errorHandler;
         $this->logger = $logger;
+        $this->dataFilter = $dataFilter;
     }
 
     /**
@@ -55,6 +60,10 @@ class PartialUpdateIndexer implements PartialIndexerInterface
 
             $this->searchEngineAdapter->setStoreId($storeId);
             $data = $this->dataGenerator->generate($ids, $storeId);
+
+            if ($this->dataFilter) {
+                $data = $this->dataFilter->filter($data, $storeId);
+            }
 
             if (empty($data)) {
                 return;
