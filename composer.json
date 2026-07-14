@@ -1,6 +1,6 @@
 {
     "name": "lupasearch/magento2-lupasearch-plugin",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "description": "LupaSearch module",
     "type": "magento2-module",
     "config": {
@@ -22,6 +22,7 @@
         "magento/module-config": "*",
         "magento/module-configurable-product": "*",
         "magento/module-cron": "*",
+        "magento/module-csp": "*",
         "magento/module-store": "*",
         "magento/module-search": "*",
         "magento/module-advanced-search": "*",
