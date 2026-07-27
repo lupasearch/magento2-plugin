@@ -107,9 +107,16 @@ bin/magento indexer:reindex lupasearch_category
 
 Start the LupaSearch queue consumers to process queued tasks:
 
-```
+```shell
 bin/magento queue:consumers:start lupasearch.all
+bin/magento queue:consumers:start lupasearch_price
 ```
+
+The `lupasearch.all` consumer processes product and category messages, but it
+does not process price messages. Price updates are published to the separate
+`lupasearch_price` queue, so the `lupasearch_price` consumer must also be
+running. This applies to both the default AMQP setup and installations using
+the `lupasearch/magento2-lupasearch-plugin-queue-db` compatibility module.
 
 ### 3: Verify data
 
