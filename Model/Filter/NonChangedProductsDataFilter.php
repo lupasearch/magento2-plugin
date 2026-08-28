@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace LupaSearch\LupaSearchPlugin\Model\Filter;
 
-use LupaSearch\LupaSearchPlugin\Model\Config\Index\ProductConfigInterface;
+use LupaSearch\LupaSearchPlugin\Model\Config\Index\HashCheckConfigInterface;
 use LupaSearch\LupaSearchPlugin\Model\Formatter\HashDataFormatterInterface;
 use LupaSearch\LupaSearchPlugin\Model\ResourceModel\GetProductHashesByProductIds;
 use LupaSearch\LupaSearchPlugin\Model\ResourceModel\UpdateProductHashes;
@@ -25,20 +25,20 @@ class NonChangedProductsDataFilter implements DataFilterInterface
 
     private SerializerInterface $serializer;
 
-    private ProductConfigInterface $productConfig;
+    private HashCheckConfigInterface $config;
 
     public function __construct(
         GetProductHashesByProductIds $getProductHashesByProductIds,
         UpdateProductHashes $updateProductHashes,
         HashDataFormatterInterface $formatter,
         SerializerInterface $serializer,
-        ProductConfigInterface $productConfig
+        HashCheckConfigInterface $config
     ) {
         $this->getProductHashesByProductIds = $getProductHashesByProductIds;
         $this->updateProductHashes = $updateProductHashes;
         $this->formatter = $formatter;
         $this->serializer = $serializer;
-        $this->productConfig = $productConfig;
+        $this->config = $config;
     }
 
     /**
@@ -50,7 +50,7 @@ class NonChangedProductsDataFilter implements DataFilterInterface
     {
         $ids = array_keys($data);
 
-        if (!$ids || !$this->productConfig->isHashCheckEnabled($storeId)) {
+        if (!$ids || !$this->config->isHashCheckEnabled($storeId)) {
             return $data;
         }
 

@@ -11,5 +11,18 @@
             "LUPASEARCH_PRD_HASH_PRD_ID_CAT_PRD_ENTT_ENTT_ID": true,
             "LUPASEARCH_PRODUCT_HASH_STORE_ID_STORE_STORE_ID": true
         }
+    },
+    "lupasearch_price_update_hash": {
+        "column": {
+            "product_id": true,
+            "store_id": true,
+            "hash": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "LUPASEARCH_PRICE_UPD_HASH_PRD_ID_CAT_PRD_ENTT_ENTT_ID": true,
+            "LUPASEARCH_PRICE_UPDATE_HASH_STORE_ID_STORE_STORE_ID": true
+        }
     }
 }

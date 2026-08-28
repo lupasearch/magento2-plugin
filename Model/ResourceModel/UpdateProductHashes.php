@@ -13,9 +13,14 @@ class UpdateProductHashes
 
     private ResourceConnection $resourceConnection;
 
-    public function __construct(ResourceConnection $resourceConnection)
-    {
+    private string $tableName;
+
+    public function __construct(
+        ResourceConnection $resourceConnection,
+        string $tableName = GetProductHashesByProductIds::TABLE_NAME
+    ) {
         $this->resourceConnection = $resourceConnection;
+        $this->tableName = $tableName;
     }
 
     /**
@@ -29,7 +34,7 @@ class UpdateProductHashes
         }
 
         $connection = $this->resourceConnection->getConnection();
-        $tableName = $connection->getTableName(GetProductHashesByProductIds::TABLE_NAME);
+        $tableName = $connection->getTableName($this->tableName);
 
         $connection->insertOnDuplicate(
             $tableName,
