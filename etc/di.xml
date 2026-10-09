@@ -379,14 +379,22 @@
         </arguments>
     </type>
 
+    <type name="LupaSearch\LupaSearchPlugin\Model\QueryManager">
+        <arguments>
+            <argument name="createOnlyTypes" xsi:type="array">
+                <item name="product_suggest" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_PRODUCT_SUGGEST</item>
+            </argument>
+        </arguments>
+    </type>
+
     <type name="LupaSearch\LupaSearchPlugin\Model\QueriesGenerator">
         <arguments>
             <argument name="logger" xsi:type="object">LupaSearch\LupaSearchPlugin\Model\Indexer\Logger</argument>
             <argument name="types" xsi:type="array">
                 <item name="product_search_box" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_PRODUCT_SEARCH_BOX</item>
                 <item name="product_catalog" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_PRODUCT_CATALOG</item>
-                <item name="product_suggest" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_PRODUCT_SUGGEST</item>
                 <item name="product" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_PRODUCT</item>
+                <item name="product_suggest" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_PRODUCT_SUGGEST</item>
                 <item name="category" xsi:type="const">LupaSearch\LupaSearchPlugin\Model\Adapter\QueriesManagementInterface::TYPE_CATEGORY</item>
             </argument>
         </arguments>

@@ -28,14 +28,26 @@ class QueryManager implements QueryManagerInterface
      */
     private $queriesConfig;
 
+    /**
+     * Query types which are only created when missing and never updated, to keep manual changes
+     *
+     * @var string[]
+     */
+    private $createOnlyTypes;
+
+    /**
+     * @param string[] $createOnlyTypes
+     */
     public function __construct(
         QueryBuildersPoolInterface $queryBuildersPool,
         QueriesManagementPool $queriesManagementPool,
-        QueriesConfigInterface $queriesConfig
+        QueriesConfigInterface $queriesConfig,
+        array $createOnlyTypes = []
     ) {
         $this->queryBuildersPool = $queryBuildersPool;
         $this->queriesManagementPool = $queriesManagementPool;
         $this->queriesConfig = $queriesConfig;
+        $this->createOnlyTypes = $createOnlyTypes;
     }
 
     /**
@@ -111,6 +123,10 @@ class QueryManager implements QueryManagerInterface
      */
     protected function update(SearchQueryInterface $searchQuery, string $type, int $storeId): bool
     {
+        if (in_array($type, $this->createOnlyTypes, true)) {
+            return false;
+        }
+
         $management = $this->queriesManagementPool->get($type);
 
         if (!$management || $searchQuery->getDescription() !== $this->getDescription($type, $storeId)) {
