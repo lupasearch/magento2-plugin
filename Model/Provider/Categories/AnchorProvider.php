@@ -113,9 +113,8 @@ class AnchorProvider implements AnchorProviderInterface
             implode(
                 ' AND ',
                 [
-                    '`attr`.`%1$s` = `child`.`%1$s`',
+                    '`attr`.`%1$s` = `e`.`%1$s`',
                     '`attr`.`attribute_id` = ' . $attributeId,
-                    '`attr`.`%1$s` = `child`.`%1$s`',
                     '`attr`.`store_id` = 0',
                     '`attr`.`value` = 1',
                 ]
