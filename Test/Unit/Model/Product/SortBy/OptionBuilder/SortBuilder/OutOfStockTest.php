@@ -54,20 +54,17 @@ class OutOfStockTest extends TestCase
 
     protected function createOptionParameters(string $code): OptionParametersInterface
     {
-        $optionParameters = $this->createMock(OptionParametersInterface::class);
+        $optionParameters = $this->createStub(OptionParametersInterface::class);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getLabel')
             ->willReturn('Test');
 
         $optionParameters
-            ->expects(self::any())
             ->method('getCode')
             ->willReturn($code);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getDirection')
             ->willReturn(OptionParametersInterface::ASC);
 

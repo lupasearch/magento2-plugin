@@ -16,11 +16,11 @@ class ParentIdsProviderTest extends TestCase
 {
     private ParentIdsProvider $object;
 
-    private MockObject $collectionBuilder;
+    private CollectionBuilder $collectionBuilder;
 
-    private MockObject $collection;
+    private Collection $collection;
 
-    private MockObject $select;
+    private Select $select;
 
     private MockObject $connection;
 
@@ -89,22 +89,19 @@ class ParentIdsProviderTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->collectionBuilder = $this->createMock(CollectionBuilder::class);
-        $this->collection = $this->createMock(Collection::class);
-        $this->select = $this->createMock(Select::class);
+        $this->collectionBuilder = $this->createStub(CollectionBuilder::class);
+        $this->collection = $this->createStub(Collection::class);
+        $this->select = $this->createStub(Select::class);
         $this->connection = $this->createMock(AdapterInterface::class);
         $this->object = new ParentIdsProvider($this->collectionBuilder);
 
-        $this->collectionBuilder->expects(self::any())
-            ->method('build')
+        $this->collectionBuilder->method('build')
             ->willReturn($this->collection);
 
-        $this->collection->expects(self::any())
-            ->method('getSelect')
+        $this->collection->method('getSelect')
             ->willReturn($this->select);
 
-        $this->select->expects(self::any())
-            ->method('getConnection')
+        $this->select->method('getConnection')
             ->willReturn($this->connection);
     }
 }

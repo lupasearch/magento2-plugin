@@ -6,7 +6,6 @@ namespace LupaSearch\LupaSearchPlugin\Test\Unit\Model\Product\SortBy\OptionBuild
 
 use LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\CodeBuilder;
 use LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionParametersInterface;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 class CodeBuilderTest extends TestCase
@@ -42,22 +41,19 @@ class CodeBuilderTest extends TestCase
         $this->object = new CodeBuilder();
     }
 
-    protected function createOptionParameters(string $code, string $direction): MockObject
+    protected function createOptionParameters(string $code, string $direction): OptionParametersInterface
     {
-        $optionParameters = $this->createMock(OptionParametersInterface::class);
+        $optionParameters = $this->createStub(OptionParametersInterface::class);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getLabel')
             ->willReturn('Test');
 
         $optionParameters
-            ->expects(self::any())
             ->method('getCode')
             ->willReturn($code);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getDirection')
             ->willReturn($direction);
 

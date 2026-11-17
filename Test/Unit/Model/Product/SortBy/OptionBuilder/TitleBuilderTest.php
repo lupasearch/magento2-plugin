@@ -6,7 +6,6 @@ namespace LupaSearch\LupaSearchPlugin\Test\Unit\Model\Product\SortBy\OptionBuild
 
 use LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionBuilder\TitleBuilder;
 use LupaSearch\LupaSearchPlugin\Model\Product\SortBy\OptionParametersInterface;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 class TitleBuilderTest extends TestCase
@@ -69,22 +68,19 @@ class TitleBuilderTest extends TestCase
         $this->assertEquals('Test ', $object->build($optionParameters));
     }
 
-    protected function createOptionParameters(string $label, string $code, string $direction): MockObject
+    protected function createOptionParameters(string $label, string $code, string $direction): OptionParametersInterface
     {
-        $optionParameters = $this->createMock(OptionParametersInterface::class);
+        $optionParameters = $this->createStub(OptionParametersInterface::class);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getLabel')
             ->willReturn($label);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getCode')
             ->willReturn($code);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getDirection')
             ->willReturn($direction);
 

@@ -23,6 +23,11 @@ class HydratorTest extends TestCase
      */
     private $productHydratorPool;
 
+    /**
+     * @var Product
+     */
+    private $product;
+
     public function testExtract(): void
     {
         $hydratorList = [];
@@ -72,7 +77,7 @@ class HydratorTest extends TestCase
     protected function setUp(): void
     {
         $this->productHydratorPool = $this->createMock(HydratorPool::class);
-        $this->product = $this->createMock(Product::class);
+        $this->product = $this->createStub(Product::class);
         $this->object = new Hydrator($this->productHydratorPool);
     }
 }

@@ -26,7 +26,7 @@ class CategoryTest extends TestCase
 
     private MockObject $positionProvider;
 
-    private MockObject $anchorProvider;
+    private AnchorProviderInterface $anchorProvider;
 
     private MockObject $parentIdsProvider;
 
@@ -129,7 +129,7 @@ class CategoryTest extends TestCase
         $this->productConfig = $this->createMock(ProductConfigInterface::class);
         $this->parentIdsProvider = $this->createMock(ParentIdsProviderInterface::class);
         $this->positionProvider = $this->createMock(PositionProviderInterface::class);
-        $this->anchorProvider = $this->createMock(AnchorProviderInterface::class);
+        $this->anchorProvider = $this->createStub(AnchorProviderInterface::class);
         $this->product = $this->createMock(Product::class);
 
         $this->productConfig

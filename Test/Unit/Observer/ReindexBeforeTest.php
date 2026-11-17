@@ -32,17 +32,16 @@ class ReindexBeforeTest extends TestCase
         $ids = [5, 8, 9, 3];
         $storeId = '5';
 
+        $call = 0;
+
         $this->observer
             ->expects(self::exactly(2))
             ->method('getData')
-            ->withConsecutive(
-                ['ids'],
-                ['store_id'],
-            )
-            ->willReturnOnConsecutiveCalls(
-                $ids,
-                $storeId,
-            );
+            ->willReturnCallback(function ($key) use ($ids, $storeId, &$call) {
+                $this->assertSame(['ids', 'store_id'][$call++], $key);
+
+                return $key === 'ids' ? $ids : $storeId;
+            });
 
         $this->providerCache
             ->expects(self::once())

@@ -37,6 +37,8 @@ class ValueTest extends TestCase
 
     public function testBuildConfigFalse(): void
     {
+        $this->valueBuilder->expects(self::never())->method('build');
+
         $this->assertEmpty($this->object->build($this->createOptionParameters('position')));
     }
 
@@ -48,20 +50,17 @@ class ValueTest extends TestCase
 
     private function createOptionParameters(string $code): OptionParametersInterface
     {
-        $optionParameters = $this->createMock(OptionParametersInterface::class);
+        $optionParameters = $this->createStub(OptionParametersInterface::class);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getLabel')
             ->willReturn('Test');
 
         $optionParameters
-            ->expects(self::any())
             ->method('getCode')
             ->willReturn($code);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getDirection')
             ->willReturn(OptionParametersInterface::ASC);
 

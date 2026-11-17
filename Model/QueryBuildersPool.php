@@ -24,7 +24,7 @@ class QueryBuildersPool implements QueryBuildersPoolInterface
 
     public function getByType(string $type): QueryBuilderInterface
     {
-        if (!isset($type, $this->builders[$type])) {
+        if (!isset($this->builders[$type])) {
             throw new NotFoundException(__('Query builder is not found for given type %1', $type));
         }
 

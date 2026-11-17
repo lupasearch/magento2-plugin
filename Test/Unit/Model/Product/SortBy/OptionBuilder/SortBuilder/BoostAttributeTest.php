@@ -59,20 +59,17 @@ class BoostAttributeTest extends TestCase
 
     protected function createOptionParameters(string $label, string $code, string $direction): OptionParametersInterface
     {
-        $optionParameters = $this->createMock(OptionParametersInterface::class);
+        $optionParameters = $this->createStub(OptionParametersInterface::class);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getLabel')
             ->willReturn($label);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getCode')
             ->willReturn($code);
 
         $optionParameters
-            ->expects(self::any())
             ->method('getDirection')
             ->willReturn($direction);
 

@@ -18,7 +18,7 @@ class SearchableAttributesProviderTest extends TestCase
     private $object;
 
     /**
-     * @var MockObject
+     * @var ContainsProductCodeAttributeMapInterface
      */
     private $containsProductCodeAttributeMap;
 
@@ -61,11 +61,10 @@ class SearchableAttributesProviderTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->containsProductCodeAttributeMap = $this->createMock(ContainsProductCodeAttributeMapInterface::class);
+        $this->containsProductCodeAttributeMap = $this->createStub(ContainsProductCodeAttributeMapInterface::class);
         $this->attributeResource = $this->createMock(AttributeResource::class);
 
         $this->containsProductCodeAttributeMap
-            ->expects(self::any())
             ->method('getList')
             ->willReturn($this->containsProductCodeAttributeList);
 

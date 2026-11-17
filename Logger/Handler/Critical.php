@@ -21,7 +21,7 @@ class Critical extends Base
      */
     protected $loggerType = Logger::CRITICAL;
 
-    public function __construct(DriverInterface $filesystem, ?string $filePath = null, ?string $fileName = null)
+    public function __construct(DriverInterface $filesystem, ?string $filePath = null)
     {
         $fileName = sprintf(self::FILENAME_FORMAT, date(self::DATE_FORMAT));
 

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace LupaSearch\LupaSearchPlugin\Test\Unit\Model\Normalizer;
 
 use LupaSearch\LupaSearchPlugin\Model\Normalizer\DateNormalizer;
-use DateTimeZone;
 use Magento\Framework\Stdlib\DateTime\DateTime;
 use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -29,27 +28,33 @@ class DateNormalizerTest extends TestCase
     private $localeDate;
 
     /**
-     * @var DateTimeZone
+     * @var string
      */
-    private $timeZone;
+    private $originalTimezone;
 
     public function testNormalize(): void
     {
         $this->localeDate
-            ->expects(self::any())
+            ->expects(self::once())
             ->method('date')
-            ->with(1586368300)
+            ->with(1586343100)
             ->willReturn(
-                (new \DateTime('', $this->timeZone))->setTimestamp(1586368300),
+                new \DateTime('@1586343100'),
             );
 
         $this->assertEquals('2020-04-08T10:51:40Z', $this->object->normalize('2020-04-08 10:51:40'));
     }
 
+    protected function tearDown(): void
+    {
+        date_default_timezone_set($this->originalTimezone);
+    }
+
     protected function setUp(): void
     {
         $this->localeDate = $this->createMock(TimezoneInterface::class);
-        $this->timeZone = new DateTimeZone('UTC');
+        $this->originalTimezone = date_default_timezone_get();
+        date_default_timezone_set('UTC');
         $this->dateTime = new DateTime($this->localeDate);
         $this->object = new DateNormalizer($this->dateTime);
     }

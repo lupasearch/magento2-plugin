@@ -30,6 +30,8 @@ class ProductConfigTest extends TestCase
 
     public function testGetBoostFields(): void
     {
+        $this->scopeConfig->expects(self::never())->method('getValue');
+
         $expected = ['bf_test'];
 
         $this->fieldArrayConfig
@@ -44,6 +46,8 @@ class ProductConfigTest extends TestCase
 
     public function testGetCategoriesSearchWeight(): void
     {
+        $this->fieldArrayConfig->expects(self::never())->method('getColumn');
+
         $expected = 8;
 
         $this->scopeConfig
@@ -58,6 +62,8 @@ class ProductConfigTest extends TestCase
 
     public function testIsOutOfStockProductsAtTheEnd(): void
     {
+        $this->fieldArrayConfig->expects(self::never())->method('getColumn');
+
         $storeId = 5;
 
         $this->scopeConfig
@@ -76,6 +82,8 @@ class ProductConfigTest extends TestCase
 
     public function testGetBoostFieldCoefficients(): void
     {
+        $this->scopeConfig->expects(self::never())->method('getValue');
+
         $expected = ['bf_test' => 1];
 
         $this->fieldArrayConfig

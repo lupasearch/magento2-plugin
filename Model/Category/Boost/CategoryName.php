@@ -45,9 +45,7 @@ class CategoryName implements FieldBoostInterface
         $connection = $collection->getConnection();
         $values = $connection->fetchPairs($collection->getSelect());
 
-        if (empty($values)) {
-            return [];
-        }
+        return $values;
     }
 
     protected function getCollection(): ?CategoryCollection

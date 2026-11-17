@@ -23,7 +23,7 @@ class ReindexAfterTest extends TestCase
     private $providerCache;
 
     /**
-     * @var MockObject
+     * @var Observer
      */
     private $observer;
 
@@ -39,7 +39,7 @@ class ReindexAfterTest extends TestCase
     protected function setUp(): void
     {
         $this->providerCache = $this->createMock(ProviderCacheInterface::class);
-        $this->observer = $this->createMock(Observer::class);
+        $this->observer = $this->createStub(Observer::class);
         $this->object = new ReindexAfter($this->providerCache);
     }
 }

@@ -37,6 +37,9 @@ class BoostAttributesProviderTest extends TestCase
 
     public function testGetCoefficient(): void
     {
+        $this->attributeCollectionFactory->expects(self::never())->method('create');
+        $this->collection->expects(self::never())->method('getIterator');
+
         $expected = 16.1;
 
         $this->productConfig
@@ -51,6 +54,9 @@ class BoostAttributesProviderTest extends TestCase
 
     public function testGetCoefficientDefault(): void
     {
+        $this->attributeCollectionFactory->expects(self::never())->method('create');
+        $this->collection->expects(self::never())->method('getIterator');
+
         $expected = 1.0;
 
         $this->productConfig
@@ -65,6 +71,8 @@ class BoostAttributesProviderTest extends TestCase
 
     public function testGetList(): void
     {
+        $this->productConfig->expects(self::once())->method('getBoostFields')->willReturn(['test1', 'test3']);
+
         $expected = [
             'bf_4545' => 'test1',
             'bf_1234' => 'test3',
@@ -107,6 +115,10 @@ class BoostAttributesProviderTest extends TestCase
 
     public function testGetAttributeId(): void
     {
+        $this->attributeCollectionFactory->expects(self::never())->method('create');
+        $this->collection->expects(self::never())->method('getIterator');
+        $this->productConfig->expects(self::never())->method('getBoostFieldCoefficients');
+
         $attribute = $this->createMock(Attribute::class);
         $attribute
             ->expects(self::once())
@@ -118,10 +130,7 @@ class BoostAttributesProviderTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->attributeCollectionFactory = $this->getMockBuilder(CollectionFactory::class)
-            ->disableOriginalConstructor()
-            ->setMethods(['create'])
-            ->getMock();
+        $this->attributeCollectionFactory = $this->createMock(CollectionFactory::class);
         $this->productConfig = $this->createMock(ProductConfigInterface::class);
         $this->collection = $this->createMock(Collection::class);
         $this->object = new BoostAttributesProvider($this->attributeCollectionFactory, $this->productConfig);

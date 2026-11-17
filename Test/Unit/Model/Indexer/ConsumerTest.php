@@ -39,6 +39,8 @@ class ConsumerTest extends TestCase
 
     public function testProcess(): void
     {
+        $this->logger->expects(self::never())->method('critical');
+
         $ids = [1, 2, 3, 4];
         $storeId = 1;
 
@@ -156,7 +158,7 @@ class ConsumerTest extends TestCase
         $this->logger = $this->createMock(LoggerInterface::class);
         $this->batch = $this->createMock(BatchInterface::class);
 
-        $area = $this->createMock(AreaInterface::class);
+        $area = $this->createStub(AreaInterface::class);
         $area
             ->method('load')
             ->willReturnSelf();
